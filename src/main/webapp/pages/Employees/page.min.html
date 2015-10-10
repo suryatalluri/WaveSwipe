@@ -1,0 +1,58 @@
+<style id="Employees.css">
+
+</style>
+<script id="Employees.js">
+Application.$controller("EmployeesPageController", ["$scope", function ($scope) {
+    "use strict";
+
+    /* perform any action with the variables inside this block(on-page-load) */
+    $scope.onPageVariablesReady = function () {
+        /*
+         * variables can be accessed through '$scope.Variables' property here
+         * e.g. $scope.Variables.staticVariable1.getData()
+         */
+    };
+    
+    /* perform any action with widgets inside this block */
+    $scope.onPageReady = function () {
+        /*
+         * widgets can be accessed through '$scope.Widgets' property here
+         * e.g. $scope.Widgets.byId(), $scope.Widgets.byName()or access widgets by $scope.Widgets.widgetName
+         */
+    };
+
+}]);
+
+</script>
+<script id="Employees.variables.json">
+var _EmployeesPage_Variables_ ={}
+</script>
+<script id="Employees.html" type="text/ng-template">
+<wm-page data-ng-controller="EmployeesPageController" name="page1">
+    <wm-left-panel content="leftnav" columnwidth="2" name="left_panel1"></wm-left-panel>
+    <wm-mobile-navbar name="mobile_navbar1" title="EMPLOYEES" backbutton="false">
+        <wm-anchor name="anchor1" iconclass="glyphicon glyphicon-plus" caption="" show="false"></wm-anchor>
+    </wm-mobile-navbar>
+    <wm-content name="content1">
+        <wm-page-content columnwidth="12" name="page_content1">
+            <wm-livelist listclass="list-group" itemclass="list-group-item" name="EmployeeLivelist" selectfirstitem="false" on-click="GoogleapisInvoke;goToPage_EmployeesProfile" dataset="bind:Variables.HrdbEmployeeData.dataSet">
+                <wm-listtemplate layout="media" name="listtemplate2">
+                    <wm-container class="media" name="container9">
+                        <wm-container class="media-left" name="container10">
+                            <wm-picture class="media-object picture" shape="circle" width="100" name="picture3" picturesource="bind:Variables.HrdbEmployeeData.dataSet.data[$i].picurl"></wm-picture>
+                        </wm-container>
+                        <wm-container class="media-body" data-template-ctr="true" name="container11">
+                            <wm-label width="100%" caption="bind:Variables.HrdbEmployeeData.dataSet.data[$i].firstname+' '+Variables.HrdbEmployeeData.dataSet.data[$i].lastname" name="label5" fontsize="14"></wm-label>
+                            <wm-label width="100%" caption="bind:Variables.HrdbEmployeeData.dataSet.data[$i].department.name" name="label9"></wm-label>
+                            <wm-label width="100%" caption="bind:Variables.HrdbEmployeeData.dataSet.data[$i].city" name="label11"></wm-label>
+                        </wm-container>
+                        <wm-container class="media-right media-middle" name="container12">
+                            <wm-button iconname="chevron-right" caption="" name="button3"></wm-button>
+                        </wm-container>
+                    </wm-container>
+                </wm-listtemplate>
+            </wm-livelist>
+        </wm-page-content>
+    </wm-content>
+</wm-page>
+</script>

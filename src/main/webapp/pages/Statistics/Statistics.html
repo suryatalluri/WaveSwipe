@@ -1,0 +1,80 @@
+<wm-page data-ng-controller="StatisticsPageController" name="page1">
+    <wm-left-panel content="leftnav" name="left_panel1"></wm-left-panel>
+    <wm-mobile-navbar name="mobile_navbar1" title="STATISTICS" color="WHITE" fontweight="bold" backbutton="false"></wm-mobile-navbar>
+    <wm-content name="content1">
+        <wm-page-content columnwidth="12" name="page_content1">
+            <wm-accordion name="accordion1">
+                <wm-accordionpane name="accordionpane1">
+                    <wm-accordionheader name="accordionheader1" heading="DEPARTMENT WISE BUDGET" color="WHITE" fontweight="bold"></wm-accordionheader>
+                    <wm-accordioncontent name="accordioncontent1">
+                        <wm-chart type="Line" name="linechart" theme="Azure" dataset="bind:Variables.HrdbDepartmentData.dataSet" xaxisdatakey="deptcode" yaxisdatakey="budget" offsetleft="10" tooltips="true" showxaxis="false" showyaxis="false" height="210px"
+                        legendtype="classic" yaxislabel="Budget" highlightpoints="true" yaxislabeldistance="3" showlegend="false" fontsize="12" offsetright="10" offsettop="25" offsetbottom="55" linethickness="1px" captions="false"></wm-chart>
+                    </wm-accordioncontent>
+                </wm-accordionpane>
+            </wm-accordion>
+            <wm-accordion name="accordion2">
+                <wm-accordionpane name="accordionpane2">
+                    <wm-accordionheader name="accordionheader2" heading="DEPARTMENT WISE STATISTICS" color="WHITE"></wm-accordionheader>
+                    <wm-accordioncontent name="accordioncontent2">
+                        <wm-chart type="Column" name="columnchart" theme="Retro" dataset="bind:Variables.HrdbDepartmentData.dataSet" xaxisdatakey="deptcode" yaxisdatakey="q1,q2,q3,q4" yaxislabel="Quaterly Statistics" showyaxis="false" showxaxis="true" legendtype="classic"
+                        offsetleft="10" yaxislabeldistance="5" showcontrols="false" staggerlabels="false" reducexticks="false" barspacing="0.3" offsetright="10" captions="false"></wm-chart>
+                    </wm-accordioncontent>
+                </wm-accordionpane>
+            </wm-accordion>
+            <wm-accordion name="accordion3">
+                <wm-accordionpane name="accordionpane3">
+                    <wm-accordionheader name="accordionheader3" heading="REVENUE BY DEPARTMENT" color="WHITE"></wm-accordionheader>
+                    <wm-accordioncontent name="accordioncontent3">
+                        <wm-chart type="Pie" name="chart9_1" theme="Flyer" legendtype="classic" dataset="bind:Variables.HrdbDepartmentData.dataSet" xaxisdatakey="name" yaxisdatakey="budget" borderunit="em" paddingunit="em" marginunit="em" offsetright="-9"
+                        offsetleft="-9" legendposition="Top"></wm-chart>
+                    </wm-accordioncontent>
+                </wm-accordionpane>
+            </wm-accordion>
+            <wm-accordion name="accordion4">
+                <wm-accordionpane name="accordionpane4">
+                    <wm-accordionheader name="accordionheader4" heading="DEPARTMENT WISE STATISTICS" color="WHITE"></wm-accordionheader>
+                    <wm-accordioncontent name="accordioncontent4">
+                        <wm-chart type="Area" name="areachart" theme="Retro" dataset="bind:Variables.HrdbDepartmentData.dataSet" xaxisdatakey="deptcode" yaxisdatakey="q1,q2,q3,q4" yaxislabel="Statistics" showxaxis="true" showyaxis="false" legendtype="classic"
+                        offsetleft="10" yaxislabeldistance="7" highlightpoints="false" showcontrols="false" offsetright="10" height="210px" captions="false"></wm-chart>
+                    </wm-accordioncontent>
+                </wm-accordionpane>
+            </wm-accordion>
+            <wm-accordion name="accordion5">
+                <wm-accordionpane name="accordionpane5">
+                    <wm-accordionheader name="accordionheader5" heading="DEPARTMENTS WISE 1st QUATER" color="WHITE"></wm-accordionheader>
+                    <wm-accordioncontent name="accordioncontent5">
+                        <wm-chart type="Cumulative Line" name="cumulativelinechart" theme="Terrestrial" dataset="bind:Variables.HrdbDepartmentData.dataSet" xaxisdatakey="deptcode" yaxisdatakey="budget" showxaxis="true" showyaxis="false" offsetleft="10" highlightpoints="true"
+                        legendtype="classic" captions="false" showcontrols="false" showlegend="false" offsetright="10"></wm-chart>
+                    </wm-accordioncontent>
+                </wm-accordionpane>
+            </wm-accordion>
+            <wm-accordion name="accordion6">
+                <wm-accordionpane name="accordionpane6">
+                    <wm-accordionheader name="accordionheader6" heading="DEPARTMENTS WISE BUDGET" color="WHITE"></wm-accordionheader>
+                    <wm-accordioncontent name="accordioncontent6">
+                        <wm-chart legendtype="classic" type="Bar" name="barchart" theme="GrayScale" dataset="bind:Variables.HrdbDepartmentData.dataSet" xaxisdatakey="deptcode" yaxisdatakey="budget" xaxislabel="Departments" showyaxis="false" offsetleft="55"
+                        showxaxis="true" captions="false" showvalues="true" showcontrols="false" barspacing="0.3" showlegend="false"></wm-chart>
+                    </wm-accordioncontent>
+                </wm-accordionpane>
+            </wm-accordion>
+            <wm-accordion name="accordion7">
+                <wm-accordionpane name="accordionpane7">
+                    <wm-accordionheader name="accordionheader7" heading="REVENUE BY DEPARTMENT" color="WHITE"></wm-accordionheader>
+                    <wm-accordioncontent name="accordioncontent7">
+                        <wm-chart type="Donut" name="chart9" theme="Azure" dataset="bind:Variables.HrdbDepartmentData.dataSet" xaxisdatakey="name" yaxisdatakey="budget" legendtype="classic" borderunit="em" paddingunit="em" marginunit="em" fontunit="px" ynumberformat="Exponential"
+                        donutratio="0.55" orderby="name:asc" offsetright="-9" offsetleft="-9"></wm-chart>
+                    </wm-accordioncontent>
+                </wm-accordionpane>
+            </wm-accordion>
+            <wm-accordion name="accordion8">
+                <wm-accordionpane name="accordionpane8">
+                    <wm-accordionheader name="accordionheader8" heading="DEPARTMENT WISE STATISTICS" color="WHITE"></wm-accordionheader>
+                    <wm-accordioncontent name="accordioncontent8">
+                        <wm-chart type="Bubble" name="bubblechart" theme="Terrestrial" dataset="bind:Variables.HrdbDepartmentData.dataSet" xaxisdatakey="deptid" yaxisdatakey="q1,q2,q3,q4" bubblesize="name" legendtype="classic" showxdistance="false" showydistance="false"
+                        show="true" showlegend="true" tooltips="true" height="210" width="100%" shape="circle" offsetleft="75"></wm-chart>
+                    </wm-accordioncontent>
+                </wm-accordionpane>
+            </wm-accordion>
+        </wm-page-content>
+    </wm-content>
+</wm-page>

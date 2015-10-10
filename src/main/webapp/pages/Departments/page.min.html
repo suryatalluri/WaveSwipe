@@ -1,0 +1,143 @@
+<style id="Departments.css">
+
+</style>
+<script id="Departments.js">
+Application.$controller("DepartmentsPageController", ["$scope", function ($scope) {
+    "use strict";
+
+    /* perform any action with the variables inside this block(on-page-load) */
+    $scope.onPageVariablesReady = function () {
+        /*
+         * variables can be accessed through '$scope.Variables' property here
+         * e.g. $scope.Variables.staticVariable1.getData()
+         */
+    };
+    
+    /* perform any action with widgets inside this block */
+    $scope.onPageReady = function () {
+        /*
+         * widgets can be accessed through '$scope.Widgets' property here
+         * e.g. $scope.Widgets.byId(), $scope.Widgets.byName()or access widgets by $scope.Widgets.widgetName
+         */
+    };
+
+}]);
+
+</script>
+<script id="Departments.variables.json">
+var _DepartmentsPage_Variables_ ={}
+</script>
+<script id="Departments.html" type="text/ng-template">
+<wm-page data-ng-controller="DepartmentsPageController" name="page1">
+    <wm-left-panel content="leftnav" name="left_panel1"></wm-left-panel>
+    <wm-mobile-navbar name="mobile_navbar1" title="DEPARTMENT" fontunit="px" backbutton="false">
+        <wm-anchor name="anchor1" iconclass="glyphicon glyphicon-plus" caption="" show="false"></wm-anchor>
+    </wm-mobile-navbar>
+    <wm-content name="content1">
+        <wm-page-content columnwidth="12" name="page_content1">
+            <wm-segmented-control name="segmented_control1">
+                <wm-segment-content caption="ENG" name="segment_content1">
+                    <wm-livelist listclass="list-group" itemclass="list-group-item" name="ENGLIvelist" dataset="bind:Variables.HrdbEngineeringEmployees.dataSet" on-click="GoogleapisInvoke;goToPage_EmployeesProfile">
+                        <wm-listtemplate layout="media" name="listtemplate6">
+                            <wm-container class="media" name="container21_1">
+                                <wm-container class="media-left" name="container22">
+                                    <wm-picture class="media-object picture" shape="circle" width="100" name="picture6" picturesource="bind:Variables.HrdbEngineeringEmployees.dataSet[$i].PICURL"></wm-picture>
+                                </wm-container>
+                                <wm-container class="media-body" data-template-ctr="true" name="container23">
+                                    <wm-label width="100%" caption="bind:Variables.HrdbEngineeringEmployees.dataSet.FIRSTNAME+' '+Variables.HrdbEngineeringEmployees.dataSet.LASTNAME" name="label21" fontsize="14"></wm-label>
+                                    <wm-label width="100%" caption="bind:Variables.HrdbEngineeringEmployees.dataSet[$i].BIRTHDATE | toDate: 'yyyy, MMM dd'" name="label22_1"></wm-label>
+                                    <wm-label width="100%" caption="bind:Variables.HrdbEngineeringEmployees.dataSet.CITY" name="label26"></wm-label>
+                                    <wm-label width="100%" caption="bind:Variables.HrdbEngineeringEmployees.dataSet[$i].STATE + ' - ' + Variables.HrdbEngineeringEmployees.dataSet[$i].ZIP" name="label23_1"></wm-label>
+                                </wm-container>
+                                <wm-container class="media-right media-middle" name="container24">
+                                    <wm-button iconname="chevron-right" caption="" name="button6"></wm-button>
+                                </wm-container>
+                            </wm-container>
+                        </wm-listtemplate>
+                    </wm-livelist>
+                </wm-segment-content>
+                <wm-segment-content caption="PS" name="segment_content2">
+                    <wm-livelist listclass="list-group" itemclass="list-group-item" name="PSLivelist" dataset="bind:Variables.HrdbProfessionalServicesEmployees.dataSet" on-click="GoogleapisInvoke;goToPage_EmployeesProfile">
+                        <wm-listtemplate layout="media" name="listtemplate4">
+                            <wm-container class="media" name="container25">
+                                <wm-container class="media-left" name="container26">
+                                    <wm-picture class="media-object picture" shape="circle" width="100" name="picture7" picturesource="bind:Variables.HrdbProfessionalServicesEmployees.dataSet[$i].PICURL"></wm-picture>
+                                </wm-container>
+                                <wm-container class="media-body" data-template-ctr="true" name="container27">
+                                    <wm-label width="100%" caption="bind:Variables.HrdbProfessionalServicesEmployees.dataSet.FIRSTNAME+' '+Variables.HrdbProfessionalServicesEmployees.dataSet.LASTNAME" name="label31_1" fontsize="14"></wm-label>
+                                    <wm-label width="100%" caption="bind:Variables.HrdbProfessionalServicesEmployees.dataSet.CITY" name="label36"></wm-label>
+                                    <wm-label width="100%" caption="bind:Variables.HrdbProfessionalServicesEmployees.dataSet.STATE" name="label32"></wm-label>
+                                    <wm-label width="100%" caption="bind:Variables.HrdbProfessionalServicesEmployees.dataSet.ZIP" name="label33"></wm-label>
+                                </wm-container>
+                                <wm-container class="media-right media-middle" name="container28">
+                                    <wm-button iconname="chevron-right" caption="" name="button7_1"></wm-button>
+                                </wm-container>
+                            </wm-container>
+                        </wm-listtemplate>
+                    </wm-livelist>
+                </wm-segment-content>
+                <wm-segment-content caption="ADMIN" name="segment_content3">
+                    <wm-livelist listclass="list-group" itemclass="list-group-item" name="ADMINLivelist" dataset="bind:Variables.HrdbGeneralAndAdminEmployees.dataSet" on-click="GoogleapisInvoke;goToPage_EmployeesProfile">
+                        <wm-listtemplate layout="media" name="listtemplate5">
+                            <wm-container class="media" name="container29">
+                                <wm-container class="media-left" name="container30">
+                                    <wm-picture class="media-object picture" shape="circle" width="100" name="picture8" picturesource="bind:Variables.HrdbGeneralAndAdminEmployees.dataSet[$i].PICURL"></wm-picture>
+                                </wm-container>
+                                <wm-container class="media-body" data-template-ctr="true" name="container31">
+                                    <wm-label width="100%" caption="bind:Variables.HrdbGeneralAndAdminEmployees.dataSet.FIRSTNAME+' '+Variables.HrdbGeneralAndAdminEmployees.dataSet.LASTNAME" name="label41" fontsize="14"></wm-label>
+                                    <wm-label width="100%" caption="bind:Variables.HrdbGeneralAndAdminEmployees.dataSet.CITY" name="label46"></wm-label>
+                                    <wm-label width="100%" caption="bind:Variables.HrdbGeneralAndAdminEmployees.dataSet.STATE" name="label42"></wm-label>
+                                    <wm-label width="100%" caption="bind:Variables.HrdbGeneralAndAdminEmployees.dataSet.ZIP" name="label43"></wm-label>
+                                </wm-container>
+                                <wm-container class="media-right media-middle" name="container32">
+                                    <wm-button iconname="chevron-right" caption="" name="button8_1"></wm-button>
+                                </wm-container>
+                            </wm-container>
+                        </wm-listtemplate>
+                    </wm-livelist>
+                </wm-segment-content>
+                <wm-segment-content caption="SALES" name="segment_content4">
+                    <wm-livelist listclass="list-group" itemclass="list-group-item" name="SALESLivelist" dataset="bind:Variables.HrdbSalesEmployees.dataSet" on-click="GoogleapisInvoke;goToPage_EmployeesProfile">
+                        <wm-listtemplate layout="media" name="listtemplate5_2">
+                            <wm-container class="media" name="container33">
+                                <wm-container class="media-left" name="container34">
+                                    <wm-picture class="media-object picture" shape="circle" width="100" name="picture9" picturesource="bind:Variables.HrdbSalesEmployees.dataSet[$i].PICURL"></wm-picture>
+                                </wm-container>
+                                <wm-container class="media-body" data-template-ctr="true" name="container35">
+                                    <wm-label width="100%" caption="bind:Variables.HrdbSalesEmployees.dataSet.FIRSTNAME+' '+Variables.HrdbSalesEmployees.dataSet.LASTNAME" name="label51" fontsize="14"></wm-label>
+                                    <wm-label width="100%" caption="bind:Variables.HrdbSalesEmployees.dataSet.CITY" name="label56"></wm-label>
+                                    <wm-label width="100%" caption="bind:Variables.HrdbSalesEmployees.dataSet.STATE" name="label52"></wm-label>
+                                    <wm-label width="100%" caption="bind:Variables.HrdbSalesEmployees.dataSet.ZIP" name="label53"></wm-label>
+                                </wm-container>
+                                <wm-container class="media-right media-middle" name="container36">
+                                    <wm-button iconname="chevron-right" caption="" name="button9"></wm-button>
+                                </wm-container>
+                            </wm-container>
+                        </wm-listtemplate>
+                    </wm-livelist>
+                </wm-segment-content>
+                <wm-segment-content caption="MKTG" name="segment_content5">
+                    <wm-livelist listclass="list-group" itemclass="list-group-item" name="MKTGLivelist" dataset="bind:Variables.HrdbMarketingEmployees.dataSet" on-click="GoogleapisInvoke;goToPage_EmployeesProfile">
+                        <wm-listtemplate layout="media" name="listtemplate5_1">
+                            <wm-container class="media" name="container37">
+                                <wm-container class="media-left" name="container38">
+                                    <wm-picture class="media-object picture" shape="circle" width="100" name="picture10" picturesource="bind:Variables.HrdbMarketingEmployees.dataSet[$i].PICURL"></wm-picture>
+                                </wm-container>
+                                <wm-container class="media-body" data-template-ctr="true" name="container39">
+                                    <wm-label width="100%" caption="bind:Variables.HrdbMarketingEmployees.dataSet.FIRSTNAME+' '+Variables.HrdbMarketingEmployees.dataSet.LASTNAME" name="label61" fontsize="14"></wm-label>
+                                    <wm-label width="100%" caption="bind:Variables.HrdbMarketingEmployees.dataSet.CITY" name="label66"></wm-label>
+                                    <wm-label width="100%" caption="bind:Variables.HrdbMarketingEmployees.dataSet.STATE" name="label62"></wm-label>
+                                    <wm-label width="100%" caption="bind:Variables.HrdbMarketingEmployees.dataSet.ZIP" name="label63"></wm-label>
+                                </wm-container>
+                                <wm-container class="media-right media-middle" name="container40">
+                                    <wm-button iconname="chevron-right" caption="" name="button10"></wm-button>
+                                </wm-container>
+                            </wm-container>
+                        </wm-listtemplate>
+                    </wm-livelist>
+                </wm-segment-content>
+            </wm-segmented-control>
+        </wm-page-content>
+    </wm-content>
+</wm-page>
+</script>
